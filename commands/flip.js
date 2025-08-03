@@ -5,9 +5,9 @@ module.exports = {
 		.setName('flip')
 		.setDescription('Flips a coin.'),
 	async execute(interaction) {
-    let str = "https://cdn.discordapp.com/emojis/1051603058976636928.webp?size=96&quality=lossless"
+    let str = "<:turtle_defeated:1051603058976636928> tails"
     if(Math.random()>=0.5){
-      str = "https://cdn.discordapp.com/emojis/1051603071874125984.webp?size=96&quality=lossless";
+      str = "<:turtle_derpy:1051603071874125984> heads";
     }
 		await interaction.reply({content:str, ephemeral:false});
 	},
