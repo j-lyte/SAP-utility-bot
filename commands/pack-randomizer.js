@@ -42,12 +42,22 @@ module.exports = {
       "Minions": [],
       "Spells": []
     };
+    let names = JSON.parse(fs.readFileSync('commands/resources/names.json', 'utf8'));
     const title = interaction.options.getString('title');
     if (title != null) {
       pack["Title"] = title;
+      if (pack["Title"]=="tourney" || pack["Title"]=="tournament" || pack["Title"]=="tourny"){
+        let r = Math.floor(Math.random() * names.tournament.length);
+        let nickname;
+        if (interaction.member.nickname == null) {
+          nickname = interaction.user.username;
+        } else {
+          nickname = interaction.member.nickname;
+        }
+        pack["Title"] = nickname + "\'s " + names.tournament[r];
+      }
     }
     else {
-      let names = JSON.parse(fs.readFileSync('commands/resources/names.json', 'utf8'));
       let r = Math.floor(Math.random() * names.adjectives.length);
       pack["Title"] += names.adjectives[r];
       r = Math.floor(Math.random() * names.nouns.length);
