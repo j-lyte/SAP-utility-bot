@@ -54,7 +54,7 @@ module.exports = {
         } else {
           nickname = interaction.member.nickname;
         }
-        nichname = nickname.charAt(0).toUpperCase() + nickname.slice(1);
+        nickname = nickname.charAt(0).toUpperCase() + nickname.slice(1);
         pack["Title"] = nickname + "\'s " + names.tournament[r];
       }
     }
