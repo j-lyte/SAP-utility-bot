@@ -53,7 +53,8 @@ client.login(token);
 const { get } = require('https');
 setInterval(() => get(`https://discord.com/api/v10/gateway`, ({ statusCode }) => {
   if (statusCode == 429) {
-    get('https://MooseScrapeBot.j4203.repl.co');
+    Console.log("Restarting for bad gateway.")
+    get('https://sap-utility-bot.onrender.com');
     process.kill(1);
   }
 }), 900000);
