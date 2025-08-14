@@ -53,7 +53,7 @@ client.login(token);
 const { get } = require('https');
 setInterval(() => get(`https://discord.com/api/v10/gateway`, ({ statusCode }) => {
   if (statusCode == 429) {
-    Console.log("Restarting for bad gateway.")
+    console.log("Restarting for bad gateway.");
     get('https://sap-utility-bot.onrender.com');
     process.kill(1);
   }
