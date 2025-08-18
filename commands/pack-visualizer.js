@@ -49,7 +49,6 @@ module.exports = {
             ++j
           }
         }
-        if (i == 0) { ++j; }
         for (food of pool.food[i]) {
           if (pack["Spells"].includes(food)) {
             const img = await loadImage('commands/resources/icons/food/' + food + '.png');
