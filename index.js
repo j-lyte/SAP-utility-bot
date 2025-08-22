@@ -1,7 +1,7 @@
 const { createServer } = require('http');
 const server = createServer((req, res) => {
   res.writeHead(200);
-  res.end('This website is not really necessary.');
+  res.end('If you can read this, Manatee should be online.');
 });
 server.listen(3000);
 
