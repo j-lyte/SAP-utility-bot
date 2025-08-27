@@ -10,7 +10,7 @@ module.exports = {
       .setMinValue(2)
       .setMaxValue(9))
     .addStringOption(option => option.setName('custom-list')
-                     .setDescription('Changes which packs are randomized. Use \"tpsgudw\" for Turtle, Puppy, ect.')
+                     .setDescription('Changes which packs are randomized. Use \"1234560\" or \"tpsgudw\" for Turtle, Puppy, ect.')
                      .setRequired(false)
       ),
   async execute(interaction) {
@@ -27,37 +27,37 @@ module.exports = {
       let list = interaction.options.getString('custom-list');
       list.toLowerCase();
       let count = 0.0;
-      if(list.includes('t')){
+      if(list.includes('t')||list.includes('1')){
         str += "🟢";
         count++;
         chances[0] = count;
       }
-      if(list.includes('p')){
+      if(list.includes('p')||list.includes('2')){
         str += "🔵";
         count++;
         chances[1] = count;
       }
-      if(list.includes('s')){
+      if(list.includes('s')||list.includes('3')){
         str += "🔴";
         count++;
         chances[2] = count;
       }
-      if(list.includes('g')){
+      if(list.includes('g')||list.includes('4')){
         str += "🟡";
         count++;
         chances[3] = count;
       }
-      if(list.includes('u')){
+      if(list.includes('u')||list.includes('5')){
         str += "⚪";
         count++;
         chances[4] = count;
       }
-      if(list.includes('d')){
+      if(list.includes('d')||list.includes('6')){
         str += "⚫";
         count++;
         chances[5] = count;
       }
-      if(list.includes('w')){
+      if(list.includes('w')||list.includes('0')){
         str += ":calendar_spiral:";
         count++;
         chances[6] = count;
