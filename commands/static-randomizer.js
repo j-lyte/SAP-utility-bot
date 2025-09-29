@@ -23,6 +23,7 @@ module.exports = {
     }
     let chances = [1.0 / 6, 2.0 / 6, 3.0 / 6, 4.0 / 6, 5.0 / 6, 1.0, 1.0];
     if(interaction.options.getString('custom-list') != null){
+      chances = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0];
       str += " (";
       let list = interaction.options.getString('custom-list');
       list.toLowerCase();
@@ -63,7 +64,7 @@ module.exports = {
         chances[6] = count;
       }
       if(count==0){
-        await interaction.reply({ content: "Custom list must contain at least one valid pack.", ephemeral: false });
+        await interaction.reply({ content: "Custom list must contain at least one valid pack.", ephemeral: true });
         return;
       }
       for(let i = 0; i < 7; ++i){
