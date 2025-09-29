@@ -62,6 +62,10 @@ module.exports = {
         count++;
         chances[6] = count;
       }
+      if(count==0){
+        await interaction.reply({ content: "Custom list must contain at least one valid pack.", ephemeral: false });
+        return;
+      }
       for(let i = 0; i < 7; ++i){
         chances[i] /= count;
       }
